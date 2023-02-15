@@ -27,11 +27,16 @@ public class Main {
         power(numberOfPowers);
         System.out.println("Your int is " + numberOfPowers);
         System.out.println("What is your first name?");
-        // next: Java reads the first string it finds in the buffer, ignoring any newline character
+         /*
+        Sometimes a string contains a sequence of words or other items of data separated by spaces or other characters.
+        In programming terms, such items as these are known as tokens.
+        Note next will remove and return the first String token it finds in the keyboard buffer. It does not read newline characters as a token. It considers spaces to separate tokens.
+         */
         String firstName = keyboard.next();
         System.out.println("What is your last name?");
-        // nextLine: Java reads the first string it finds in the buffer, including a newline character
+        // nextLine: Java reads the first string token it finds in the buffer, including a newline character
         // (This means nextLine will "consume" a newline character it finds in the buffer.)
+        // Unlike next, nextLine does not consider spaces to separate tokens.
         String lastName = keyboard.nextLine();
         System.out.println("Your name is " + firstName + " " + lastName);
         System.out.println("What is your age?");
