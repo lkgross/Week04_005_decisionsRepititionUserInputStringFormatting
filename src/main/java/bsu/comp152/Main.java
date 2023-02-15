@@ -10,7 +10,7 @@ public class Main {
         powerWhile(8);
         powerWhile(4);
         powerWhile(2);
-        powerWhile(1);
+        powerWhile(-3);
         powerWhile(5);
         // power(10);
         switchExample(1);
@@ -18,7 +18,11 @@ public class Main {
         System.out.println("Laura".toLowerCase());
         Scanner keyboard = new Scanner(System.in);
         System.out.println("How many powers of two do you want?");
-        // nextInt: Java reads the first integer it finds in the buffer
+        /*
+         * When the user types keystrokes at the keyboard, those keystrokes are stored in an area of memory that is sometimes called the keyboard buffer.
+         * Note Pressing the Enter key causes a newline character to be stored in the keyboard buffer.
+         * Note nextInt will remove and return the first integer it finds in the keyboard buffer.
+         */
         int numberOfPowers = keyboard.nextInt();
         power(numberOfPowers);
         System.out.println("Your int is " + numberOfPowers);
@@ -32,7 +36,20 @@ public class Main {
         System.out.println("Your name is " + firstName + " " + lastName);
         System.out.println("What is your age?");
         int age = keyboard.nextInt();
-        System.out.println("You are " + age);
+        System.out.printf("You are %d\n", age);
+        System.out.printf("%s is %d\n", firstName, age);
+        System.out.printf("If the value is %b, do the thing.\n", true);
+        // Use %f as a placeholder for a decimal number.
+        System.out.printf("Length is %f and width is %f\n", Math.sqrt(5), Math.sqrt(2));
+        // We can specify the number of decimal digits, like 2:
+        System.out.printf("Length is %.2f and width is %.2f\n", Math.sqrt(5), Math.sqrt(2));
+        // We could allocate 12 spaces for a decimal number with 2 decimal digits:
+        System.out.printf("Length is %12.2f and width is %12.2f\n", Math.sqrt(5), Math.sqrt(2));
+        // Use %d as a placeholder for an integer ("digit"?).
+        System.out.printf("Length is %d and width is %d\n", 100000, 10000);
+        // We can include a comma in an integer.
+        System.out.printf("Length is %,d and width is %,d\n", 100000, 10000);
+
 
 
     }
@@ -58,6 +75,9 @@ public class Main {
      * @param n
      */
     public static void powerWhile(int n) {
+        if (n < 0){
+            throw new IllegalArgumentException();
+        }
         int power = 1;
         int count = 0;
         while (power <= n / 2) {
