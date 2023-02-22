@@ -42,6 +42,8 @@ public class Main {
         System.out.println("What is your age?");
         int age = keyboard.nextInt();
         System.out.printf("You are %d\n", age);
+        // Use %s as a placeholder for a string.
+        // Use %b as a placeholder for a boolean.
         System.out.printf("%s is %d\n", firstName, age);
         System.out.printf("If the value is %b, do the thing.\n", true);
         // Use %f as a placeholder for a decimal number.
@@ -54,9 +56,6 @@ public class Main {
         System.out.printf("Length is %d and width is %d\n", 100000, 10000);
         // We can include a comma in an integer.
         System.out.printf("Length is %,d and width is %,d\n", 100000, 10000);
-
-
-
     }
 
     /**
@@ -80,8 +79,8 @@ public class Main {
      * @param n
      */
     public static void powerWhile(int n) {
-        if (n < 0){
-            throw new IllegalArgumentException();
+        if (n <= 0){
+            throw new IllegalArgumentException("Only take the log base 2 of a positive number.");
         }
         int power = 1;
         int count = 0;
